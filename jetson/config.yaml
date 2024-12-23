@@ -1,0 +1,42 @@
+server:
+  host: '0.0.0.0'
+  port: 5000
+  debug: false
+
+i2c:
+  bus: 1
+  address: 0x40
+  frequency: 50  # Hz
+
+servo_defaults:
+  min_pulse: 500
+  max_pulse: 2500
+  min_angle: 0
+  max_angle: 180
+  speed: 100
+  acceleration: 50
+
+security:
+  enable_authentication: false
+  allowed_origins:
+    - 'http://localhost:3000'
+    - 'http://localhost:5000'
+
+logging:
+  level: 'INFO'
+  file: '/var/log/servo-configurator.log'
+  max_size: 1048576  # 1MB
+  backup_count: 5
+
+advanced_features:
+  position_feedback: false
+  torque_control: false
+  soft_limits: true
+  emergency_stop: true
+  network_control: false
+  data_logging: true
+
+system:
+  check_updates: true
+  auto_restart: true
+  max_temperature: 85  # Celsius
